@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+# 1.0.7
+- Exemplo 7 com optional chaining de condicionais
+
 # 1.0.6
 - Exemplo 6 com ternário
 
