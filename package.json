@@ -1,0 +1,27 @@
+{
+  "name": "00-exemplos",
+  "version": "1.0.0",
+  "description": "Melhorando condicionais com vários exemplos",
+  "main": "index",
+  "scripts": {
+    "test:condicionais-exemplos": "ava -v 01-condicionais/00-exemplos/*.test.js"
+  },
+  "author": "JS Raiz, Ayrton Teshima",
+  "license": "ISC",
+  "devDependencies": {
+    "@ava/babel": "^1.0.1",
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "ava": "^3.12.1",
+    "esm": "^3.2.25"
+  },
+  "ava": {
+    "babel": true,
+    "require": [
+      "esm",
+      "@babel/register"
+    ]
+  }
+}
