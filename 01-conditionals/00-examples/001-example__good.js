@@ -8,16 +8,15 @@
 */
 
 function employed(hasExperience, amountOfExperience) {
-  return ( hasExperience && amountOfExperience > 5 );
-  // if (hasExperience === true) {
-  //   if(amountOfExperience > 5) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // } else {
-  //   return false;
-  // }
+  if (hasExperience === true) {
+    if(amountOfExperience > 5) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
 }
 
 // TESTES
