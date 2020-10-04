@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 1.0.11
+- Exemplo 11 utilizando every
+
 ## 1.0.10
 - Exemplo 10 com includes
 
