@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 1.0.10
+- Exemplo 10 com includes
+
 ## 1.0.9
 - Exemplo 9 também refatorando para objeto
 
