@@ -1,5 +1,5 @@
 import test from 'ava';
-import getDiscount from './004-exemplo';
+import getDiscount from './004-example__good';
 
 test('Valor menor que 10', (t) => {
   t.is(getDiscount(5), 500);
