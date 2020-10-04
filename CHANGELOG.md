@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+# 1.0.6
+- Exemplo 6 com ternário
+
 # 1.0.5
 - Exemplo 5 com find novamente
 
