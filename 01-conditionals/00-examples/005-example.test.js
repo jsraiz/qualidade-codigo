@@ -1,5 +1,5 @@
 import test from 'ava';
-import getSpeed from './005-exemplo';
+import getSpeed from './005-example__good';
 
 test('Velocidade acima de 1864', (t) => {
   t.is(getSpeed(1900), 1864);
