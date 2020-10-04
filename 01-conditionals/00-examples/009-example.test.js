@@ -1,5 +1,5 @@
 import test from 'ava';
-import reducer from './009-exemplo';
+import reducer from './009-example__good';
 
 test('action UPDATE_USER', (t) => {
   t.is(reducer({ type: 'UPDATE_USER' }, {}), 'atualizando usuario');

@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 1.0.9
+- Exemplo 9 também refatorando para objeto
+
 ## 1.0.8
 - Exemplo 8 refatorando condicionais para objeto
 
