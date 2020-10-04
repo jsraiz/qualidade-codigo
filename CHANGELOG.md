@@ -1,6 +1,10 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+# 1.0.3
+- Removendo negação de condicional
+- Decompondo exemplo 3
+
 # 1.0.2
 - Segundo exemplo de refatoração de condicionais
 - decompondo condicional

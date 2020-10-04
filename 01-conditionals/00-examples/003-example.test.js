@@ -1,5 +1,5 @@
 import test from 'ava';
-import getStatus from './003-exemplo';
+import getStatus from './003-example__good';
 
 test('Se onlineArr for todo false e connectedArr todo true', (t) => {
   const onlineArr = [false, false, false];
