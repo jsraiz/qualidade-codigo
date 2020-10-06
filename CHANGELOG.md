@@ -1,6 +1,10 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 1.1.6
+- Explicando que vamos usar o find
+- Adicionando o salarioDe nas faixas
+
 ## 1.1.5
 - Removendo todos os magic numbers (IRPF)
 

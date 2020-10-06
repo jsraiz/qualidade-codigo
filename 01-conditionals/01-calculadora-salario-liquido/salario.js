@@ -29,58 +29,68 @@
 
 const taxasINSS = {
   faixa1: {
+    salarioDe: 0,
     salarioAte: 1045.00,
     aliquota: 0.075,
     deduzir: 0,
     descontoFixo: null
   },
   faixa2: {
+    salarioDe: 1045.00,
     salarioAte: 2089.60,
     aliquota: 0.09,
     deduzir: 15.67,
     descontoFixo: null
   },
   faixa3: {
+    salarioDe: 2089.60,
     salarioAte: 3134.40,
     aliquota: 0.12,
     deduzir: 78.36,
     descontoFixo: null
   },
   faixa4: {
+    salarioDe: 3134.40,
     salarioAte: 6101.06,
     aliquota: 0.14,
     deduzir: 141.05,
     descontoFixo: null
   },
   faixa5: {
+    salarioDe: 6101.06,
     descontoFixo: 713.10
   }
 }; 
 
 const taxasIRPF = {
   faixa1: {
+    salarioDe: 0,
     salarioAte: 1903.98,
     descontoFixo: 0,
   },
   faixa2: {
+    salarioDe: 1903.98,
     salarioAte: 2826.65,
     aliquota: 0.075,
     deduzir: 142.80,
     descontoFixo: null
   },
   faixa3: {
+    salarioDe: 2826.65,
     salarioAte: 3751.05,
     aliquota: 0.15,
     deduzir: 354.8,
     descontoFixo: null
   },
   faixa4: {
+    salarioDe: 3751.05,
     salarioAte: 4664.68,
     aliquota: 0.225,
     deduzir: 636.13,
     descontoFixo: null
   },
   faixa5: {
+    salarioDe: 4664.68,
     aliquota: 0.275,
     deduzir: 869.36,
     descontoFixo: null
