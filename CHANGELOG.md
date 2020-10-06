@@ -1,6 +1,10 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 1.1.1
+- Inicio refatoração calculadora salário líquido
+- Refatorando nomes de variáveis e parâmetros
+
 ## 1.0.13
 - Exemplo 13 com nullish coalescing
 
