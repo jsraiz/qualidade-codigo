@@ -26,6 +26,37 @@
  * - Magic number
  * - Condicionais complexas
 */
+
+const taxasINSS = {
+  faixa1: {
+    salarioAte: 1045.00,
+    aliquota: 0.075,
+    deduzir: 0,
+    descontoFixo: null
+  },
+  faixa2: {
+    salarioAte: 2089.60,
+    aliquota: 0.09,
+    deduzir: 15.67,
+    descontoFixo: null
+  },
+  faixa3: {
+    salarioAte: 3134.40,
+    aliquota: 0.12,
+    deduzir: 78.36,
+    descontoFixo: null
+  },
+  faixa4: {
+    salarioAte: 6101.06,
+    aliquota: 0.14,
+    deduzir: 141.05,
+    descontoFixo: null
+  },
+  faixa5: {
+    descontoFixo: 713.10
+  }
+}; 
+
 function calculaIRPF(salarioBase) {
   if (salarioBase >= 1903.99 && salarioBase <= 2826.65) {
     return (salarioBase * 0.075) - 142.80;
@@ -42,16 +73,16 @@ function calculaIRPF(salarioBase) {
 function calculaINSS(salarioBruto) {
   let descontoINSS = 0;
 
-  if (salarioBruto <= 1045) {
-    descontoINSS = salarioBruto * 0.075;
-  } else if (salarioBruto > 1045 && salarioBruto <= 2089.60) {
-    descontoINSS = (salarioBruto * 0.09) - 15.67;
-  } else if (salarioBruto > 2089.60 && salarioBruto <= 3134.40) {
-    descontoINSS = (salarioBruto * 0.12) - 78.36;
-  } else if (salarioBruto > 3134.40 && salarioBruto <= 6101.06) {
-    descontoINSS = (salarioBruto * 0.14) - 141.05;
+  if (salarioBruto <= taxasINSS.faixa1.salarioAte) {
+    descontoINSS = salarioBruto * taxasINSS.faixa1.aliquota;
+  } else if (salarioBruto > taxasINSS.faixa1.salarioAte && salarioBruto <= taxasINSS.faixa2.salarioAte) {
+    descontoINSS = (salarioBruto * taxasINSS.faixa2.aliquota) - taxasINSS.faixa2.deduzir;
+  } else if (salarioBruto > taxasINSS.faixa2.salarioAte && salarioBruto <= taxasINSS.faixa3.salarioAte) {
+    descontoINSS = (salarioBruto * taxasINSS.faixa3.aliquota) - taxasINSS.faixa3.deduzir;
+  } else if (salarioBruto > taxasINSS.faixa3.salarioAte && salarioBruto <= taxasINSS.faixa4.salarioAte) {
+    descontoINSS = (salarioBruto * taxasINSS.faixa4.aliquota) - taxasINSS.faixa4.deduzir;
   } else {
-    descontoINSS = 713.10;
+    descontoINSS = taxasINSS.faixa5.descontoFixo;
   }
 
   return descontoINSS;
