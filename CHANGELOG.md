@@ -1,6 +1,11 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 1.1.2
+- Refatorando funções longas
+- Separando calculo de INSS
+- Separando formata numero
+
 ## 1.1.1
 - Inicio refatoração calculadora salário líquido
 - Refatorando nomes de variáveis e parâmetros

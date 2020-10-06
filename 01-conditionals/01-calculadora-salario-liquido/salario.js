@@ -21,8 +21,8 @@
 
 /** 
  * ! Code smells identificados:
- * - Função longa 
- * - Nomes de variáveis/constantes ruins
+ * - //// Função longa 
+ * - //// Nomes de variáveis/constantes ruins
  * - Magic number
  * - Condicionais complexas
 */
@@ -40,8 +40,7 @@ function calculaIRPF(salarioBruto, descontoINSS) {
   return 0;
 }
 
-export default function calculaSalario(salarioBruto) {
-  // Descontando taxa INSS
+function calculaINSS(salarioBruto) {
   let descontoINSS = 0;
 
   if (salarioBruto <= 1045) {
@@ -56,18 +55,24 @@ export default function calculaSalario(salarioBruto) {
     descontoINSS = 713.10;
   }
 
-  descontoINSS = parseFloat(descontoINSS.toFixed(2))
+  return descontoINSS;
+}
 
-  const descontoIRPF = parseFloat(calculaIRPF(salarioBruto, descontoINSS).toFixed(2));
+function formataNumero(numero) {
+  return parseFloat(numero.toFixed(2));
+}
 
-  const salarioBase = salarioBruto - descontoINSS;
+export default function calculaSalario(salarioBruto) {
+  const descontoINSS = formataNumero(calculaINSS(salarioBruto));
 
-  const salarioLiquido = salarioBase - descontoIRPF;
+  const descontoIRPF = formataNumero(calculaIRPF(salarioBruto, descontoINSS));
+
+  const salarioLiquido = formataNumero(salarioBruto - descontoINSS - descontoIRPF);
 
   return {
     descontoINSS: descontoINSS,
     descontoIRPF: descontoIRPF,
-    liquido: parseFloat(salarioLiquido.toFixed(2))
+    liquido: salarioLiquido
   };
 }
 
