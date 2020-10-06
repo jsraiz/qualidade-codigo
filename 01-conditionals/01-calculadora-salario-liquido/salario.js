@@ -23,7 +23,7 @@
  * ! Code smells identificados:
  * - //// Função longa 
  * - //// Nomes de variáveis/constantes ruins
- * - Magic number
+ * - //// Magic number
  * - Condicionais complexas
 */
 
@@ -57,17 +57,49 @@ const taxasINSS = {
   }
 }; 
 
+const taxasIRPF = {
+  faixa1: {
+    salarioAte: 1903.98,
+    descontoFixo: 0,
+  },
+  faixa2: {
+    salarioAte: 2826.65,
+    aliquota: 0.075,
+    deduzir: 142.80,
+    descontoFixo: null
+  },
+  faixa3: {
+    salarioAte: 3751.05,
+    aliquota: 0.15,
+    deduzir: 354.8,
+    descontoFixo: null
+  },
+  faixa4: {
+    salarioAte: 4664.68,
+    aliquota: 0.225,
+    deduzir: 636.13,
+    descontoFixo: null
+  },
+  faixa5: {
+    aliquota: 0.275,
+    deduzir: 869.36,
+    descontoFixo: null
+  },
+};
+
 function calculaIRPF(salarioBase) {
-  if (salarioBase >= 1903.99 && salarioBase <= 2826.65) {
-    return (salarioBase * 0.075) - 142.80;
-  } else if (salarioBase > 2826.65 && salarioBase <= 3751.05) {
-    return (salarioBase * 0.15) - 354.8;
-  } else if (salarioBase > 3751.05 && salarioBase <= 4664.68) {
-    return (salarioBase * 0.225) - 636.13;
-  } else if (salarioBase > 4664.68){
-    return (salarioBase * 0.275) - 869.36;
+  if (salarioBase <= taxasIRPF.faixa1.salarioAte) {
+    return taxasIRPF.faixa1.descontoFixo;
+  } else if (salarioBase >= taxasIRPF.faixa1.salarioAte && salarioBase <= taxasIRPF.faixa2.salarioAte) {
+    return (salarioBase * taxasIRPF.faixa2.aliquota) - taxasIRPF.faixa2.deduzir;
+  } else if (salarioBase > taxasIRPF.faixa2.salarioAte && salarioBase <= taxasIRPF.faixa3.salarioAte) {
+    return (salarioBase * taxasIRPF.faixa3.aliquota) - taxasIRPF.faixa3.deduzir;
+  } else if (salarioBase > taxasIRPF.faixa3.salarioAte && salarioBase <= taxasIRPF.faixa4.salarioAte) {
+    return (salarioBase * taxasIRPF.faixa4.aliquota) - taxasIRPF.faixa4.deduzir;
+  } else if (salarioBase > taxasIRPF.faixa4.salarioAte){
+    return (salarioBase * taxasIRPF.faixa5.aliquota) - taxasIRPF.faixa5.deduzir;
   }
-  return 0;
+  return taxasIRPF.faixa1.descontoFixo;
 }
 
 function calculaINSS(salarioBruto) {

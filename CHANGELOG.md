@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 1.1.5
+- Removendo todos os magic numbers (IRPF)
+
 ## 1.1.4
 - Removendo magic number de taxas INSS
 
