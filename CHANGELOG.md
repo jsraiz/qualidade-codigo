@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 1.1.7
+- Adicionando find para buscar taxa INSS correta
+
 ## 1.1.6
 - Explicando que vamos usar o find
 - Adicionando o salarioDe nas faixas
