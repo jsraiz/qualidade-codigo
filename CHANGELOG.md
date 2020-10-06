@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 1.1.3
+- Removendo necessidade de calculaIRPF conhecer INSS
+
 ## 1.1.2
 - Refatorando funções longas
 - Separando calculo de INSS

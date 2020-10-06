@@ -26,8 +26,7 @@
  * - Magic number
  * - Condicionais complexas
 */
-function calculaIRPF(salarioBruto, descontoINSS) {
-  const salarioBase = salarioBruto - descontoINSS;
+function calculaIRPF(salarioBase) {
   if (salarioBase >= 1903.99 && salarioBase <= 2826.65) {
     return (salarioBase * 0.075) - 142.80;
   } else if (salarioBase > 2826.65 && salarioBase <= 3751.05) {
@@ -65,13 +64,15 @@ function formataNumero(numero) {
 export default function calculaSalario(salarioBruto) {
   const descontoINSS = formataNumero(calculaINSS(salarioBruto));
 
-  const descontoIRPF = formataNumero(calculaIRPF(salarioBruto, descontoINSS));
+  const salarioINSSDescontado = salarioBruto - descontoINSS;
 
-  const salarioLiquido = formataNumero(salarioBruto - descontoINSS - descontoIRPF);
+  const descontoIRPF = formataNumero(calculaIRPF(salarioINSSDescontado));
+
+  const salarioLiquido = formataNumero(salarioINSSDescontado - descontoIRPF);
 
   return {
-    descontoINSS: descontoINSS,
-    descontoIRPF: descontoIRPF,
+    descontoINSS,
+    descontoIRPF,
     liquido: salarioLiquido
   };
 }
