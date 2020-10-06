@@ -4,7 +4,7 @@
   De R$ 1.045,01 a R$ 2.089,60	  9%	  15,67
   De R$ 2.089,61 a R$ 3.134,40	  12%	  78,36
   De R$ 3.134,41 a R$ 6.101,06	  14%	  141,05
-
+  Acima de 6.101,06 desconto fixo de 713.10
 
   Faixas aliquota e Faixas deducao
 
