@@ -1,4 +1,4 @@
-## Condicional from hell (Condicional do inferno)
+## Conditional from hell (Condicional do inferno)
 ```js
 if () {
   if () {
