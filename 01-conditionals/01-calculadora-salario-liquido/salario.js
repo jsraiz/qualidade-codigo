@@ -24,7 +24,7 @@
  * - //// Função longa 
  * - //// Nomes de variáveis/constantes ruins
  * - //// Magic number
- * - Condicionais complexas
+ * - //// Condicionais complexas
 */
 
 const taxasINSS = {
@@ -97,35 +97,35 @@ const taxasIRPF = {
   },
 };
 
-function calculaIRPF(salarioBase) {
-  if (salarioBase <= taxasIRPF.faixa1.salarioAte) {
-    return taxasIRPF.faixa1.descontoFixo;
-  } else if (salarioBase >= taxasIRPF.faixa1.salarioAte && salarioBase <= taxasIRPF.faixa2.salarioAte) {
-    return (salarioBase * taxasIRPF.faixa2.aliquota) - taxasIRPF.faixa2.deduzir;
-  } else if (salarioBase > taxasIRPF.faixa2.salarioAte && salarioBase <= taxasIRPF.faixa3.salarioAte) {
-    return (salarioBase * taxasIRPF.faixa3.aliquota) - taxasIRPF.faixa3.deduzir;
-  } else if (salarioBase > taxasIRPF.faixa3.salarioAte && salarioBase <= taxasIRPF.faixa4.salarioAte) {
-    return (salarioBase * taxasIRPF.faixa4.aliquota) - taxasIRPF.faixa4.deduzir;
-  } else if (salarioBase > taxasIRPF.faixa4.salarioAte){
-    return (salarioBase * taxasIRPF.faixa5.aliquota) - taxasIRPF.faixa5.deduzir;
-  }
-  return taxasIRPF.faixa1.descontoFixo;
-}
-
 function formataNumero(numero) {
   return parseFloat(numero.toFixed(2));
 }
 
-export default function calculaSalario(salarioBruto) {
-  const faixaINSS = Object.values(taxasINSS).find(function(faixa) {
-    return (salarioBruto > faixa.salarioDe) && (faixa.salarioAte ? salarioBruto <= faixa.salarioAte : true)
-  });
+function pertenceAFaixa (salario) {
+  return function(faixa) {
+    return (salario > faixa.salarioDe) && (faixa.salarioAte ? salario <= faixa.salarioAte : true)
+  }
+}
 
-  const descontoINSS = faixaINSS.descontoFixo ?? formataNumero((salarioBruto * faixaINSS.aliquota) - faixaINSS.deduzir);
+function buscaFaixa(taxas, salario) {
+  return Object.values(taxas).find(pertenceAFaixa(salario));
+}
+
+function aplicaDesconto(faixa, salario) {
+  return faixa.descontoFixo ?? formataNumero((salario * faixa.aliquota) - faixa.deduzir);
+}
+
+export default function calculaSalario(salarioBruto) {
+  const faixaINSS = buscaFaixa(taxasINSS, salarioBruto);
+
+  const descontoINSS = aplicaDesconto(faixaINSS, salarioBruto);
 
   const salarioINSSDescontado = salarioBruto - descontoINSS;
 
-  const descontoIRPF = formataNumero(calculaIRPF(salarioINSSDescontado));
+  const faixaIRPF = buscaFaixa(taxasIRPF, salarioINSSDescontado);
+
+  const descontoIRPF = aplicaDesconto(faixaIRPF, salarioINSSDescontado);
+
   const salarioLiquido = formataNumero(salarioINSSDescontado - descontoIRPF);
 
   return {

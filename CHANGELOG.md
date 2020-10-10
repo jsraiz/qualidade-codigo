@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 1.1.8
+- Quebrando lógica do find em funções para reaproveitamento
+
 ## 1.1.7
 - Adicionando find para buscar taxa INSS correta
 
