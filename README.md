@@ -25,4 +25,4 @@ Para alguns mais específicos foram feito testes. Para isso, preciso que você v
 - [Aula 0 - Starter (projeto no estado incial)](https://github.com/jsraiz/qualidade-codigo/tree/starter)
 - Aulas 1 e 2 - teoria (sem link para código)
 - [Aulas 3 a 14](https://github.com/jsraiz/qualidade-codigo/tree/main/00-code-smells)
-- [Aulas 15 a 20](https://github.com/jsraiz/qualidade-codigo/tree/starter/01-conditionals/00-examples)
+- [Aulas 15 a 25](https://github.com/jsraiz/qualidade-codigo/tree/1.0.12/01-conditionals/00-examples)
