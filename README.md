@@ -24,5 +24,11 @@ Para alguns mais específicos foram feito testes. Para isso, preciso que você v
 ## Aulas
 - [Aula 0 - Starter (projeto no estado incial)](https://github.com/jsraiz/qualidade-codigo/tree/starter)
 - Aulas 1 e 2 - teoria (sem link para código)
-- [Aulas 3 a 14](https://github.com/jsraiz/qualidade-codigo/tree/main/00-code-smells)
-- [Aulas 15 a 20](https://github.com/jsraiz/qualidade-codigo/tree/starter/01-conditionals/00-examples)
+- [Aulas 3 a 14 - Conhecendo alguns code smells](https://github.com/jsraiz/qualidade-codigo/tree/main/00-code-smells)
+- [Aulas 15 a 26 - Refatorando condicionais](https://github.com/jsraiz/qualidade-codigo/tree/1.0.12/01-conditionals/00-examples)
+- Aula 27 - Calculadora salário líquido, como funciona.
+- [Aula 28 - Identificando code smells e refatorando nomes ruins](https://github.com/jsraiz/qualidade-codigo/tree/1.1.1/01-conditionals/01-calculadora-salario-liquido)
+- [Aula 29 - Refatorando funções longas](https://github.com/jsraiz/qualidade-codigo/tree/1.1.2/01-conditionals/01-calculadora-salario-liquido)
+- [Aula 30 - Removendo pequeno acoplamento](https://github.com/jsraiz/qualidade-codigo/tree/1.1.3/01-conditionals/01-calculadora-salario-liquido)
+- [Aula 31 - Removendo magic numbers - parte 1](https://github.com/jsraiz/qualidade-codigo/tree/1.1.4/01-conditionals/01-calculadora-salario-liquido)
+- [Aula 32 - Removendo magic numbers - parte 2](https://github.com/jsraiz/qualidade-codigo/tree/1.1.5/01-conditionals/01-calculadora-salario-liquido)
