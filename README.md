@@ -34,3 +34,4 @@ Para alguns mais específicos foram feito testes. Para isso, preciso que você v
 - [Aula 32 - Refatorando magic numbers - parte 2](https://github.com/jsraiz/qualidade-codigo/tree/1.1.5/01-conditionals/01-calculadora-salario-liquido)
 - [Aula 33 - Explicando refatoração para find](https://github.com/jsraiz/qualidade-codigo/tree/1.1.6/01-conditionals/01-calculadora-salario-liquido)
 - [Aula 34 - Refatorando para find](https://github.com/jsraiz/qualidade-codigo/tree/1.1.7/01-conditionals/01-calculadora-salario-liquido)
+- [Aula 35 - Finalizando refatoração](https://github.com/jsraiz/qualidade-codigo/tree/1.1.8/01-conditionals/01-calculadora-salario-liquido)
