@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 2.0.0
+- Quebrando projeto de galeria em funções que resolvem duplicação de código
+
 ## 1.1.8
 - Quebrando lógica do find em funções para reaproveitamento
 

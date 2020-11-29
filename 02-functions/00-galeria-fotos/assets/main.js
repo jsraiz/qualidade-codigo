@@ -62,49 +62,56 @@ for (let i = 0; i < total; i++) {
 }
 
 document.getElementById('container-fotos-lista').innerHTML = html;
-document.getElementById('img-principal').src = `fotos/${data.pictures[posicao]}`;
+
+renderImage(data.pictures[posicao]);
+
+function renderImage(photoName) {
+  document.getElementById('img-principal').src = `fotos/${photoName}`;
+}
 
 const todasFotos = document.querySelectorAll('.foto-item');
 
+function handleThumbnailClick(event) {
+  event.preventDefault();
+  posicao = parseInt(event.currentTarget.getAttribute('data-posicao'), 10);
+
+  renderImage(data.pictures[posicao]);
+
+  manipulaSetas(); 
+}
+
 for (let i = 0; i < todasFotos.length; i++) {
-  todasFotos[i].addEventListener('click', function(event) {
-    event.preventDefault();
-    posicao = parseInt(event.currentTarget.getAttribute('data-posicao'), 10);
-
-    document.getElementById('img-principal').src = `fotos/${data.pictures[posicao]}`;
-
-    manipulaSetas();
-    
-  });
+  todasFotos[i].addEventListener('click', handleThumbnailClick);
 }
 
 const botoes = document.querySelectorAll('.btn');
 
+function handleArrowClick(event) {
+  event.preventDefault();
+
+  if (event.currentTarget.id === 'btn-anterior') {
+    if (posicao <= 0) {
+      posicao = 0;
+    } else {
+      --posicao;
+    }
+  }
+
+  if (event.currentTarget.id === 'btn-proximo') {
+    if (posicao >= total - 1) {
+      posicao = total - 1;
+    } else {
+      ++posicao;
+    }
+  }
+
+  renderImage(data.pictures[posicao]);
+  manipulaSetas();
+
+}
+
 for (let i = 0; i < botoes.length; i++) {
-  botoes[i].addEventListener('click', function(event) {
-    event.preventDefault();
-
-    if (event.currentTarget.id === 'btn-anterior') {
-      if (posicao <= 0) {
-        posicao = 0;
-      } else {
-        --posicao;
-      }
-    }
-
-    if (event.currentTarget.id === 'btn-proximo') {
-      if (posicao >= total - 1) {
-        posicao = total - 1;
-      } else {
-        ++posicao;
-      }
-    }
-
-    document.getElementById('img-principal').src = `fotos/${data.pictures[posicao]}`;
-
-    manipulaSetas();
-
-  })
+  botoes[i].addEventListener('click', handleArrowClick);
 }
 
 let itensFotos = document.querySelectorAll('.foto-item');
@@ -129,6 +136,5 @@ function manipulaSetas() {
 
   itensFotos[posicao].classList.add('border-primary');
 }
-
 
 manipulaSetas();
