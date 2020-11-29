@@ -77,7 +77,8 @@ function handleThumbnailClick(event) {
 
   renderImage(data.pictures[posicao]);
 
-  manipulaSetas(); 
+  markArrows(); 
+  markThumbnail();
 }
 
 for (let i = 0; i < todasFotos.length; i++) {
@@ -86,27 +87,24 @@ for (let i = 0; i < todasFotos.length; i++) {
 
 const botoes = document.querySelectorAll('.btn');
 
+function prevPosition(position) {
+  return (position <= 0) ? 0 : (position - 1)
+}
+
+function nextPosition(position, lastPosition) {
+  return (position >= lastPosition - 1) ? (lastPosition - 1) : (position + 1)
+}
+
 function handleArrowClick(event) {
   event.preventDefault();
 
-  if (event.currentTarget.id === 'btn-anterior') {
-    if (posicao <= 0) {
-      posicao = 0;
-    } else {
-      --posicao;
-    }
-  }
-
-  if (event.currentTarget.id === 'btn-proximo') {
-    if (posicao >= total - 1) {
-      posicao = total - 1;
-    } else {
-      ++posicao;
-    }
-  }
+  posicao = (event.currentTarget.id === 'btn-anterior')
+    ? prevPosition(posicao)
+    : nextPosition(posicao, total);
 
   renderImage(data.pictures[posicao]);
-  manipulaSetas();
+  markArrows();
+  markThumbnail();
 
 }
 
@@ -114,9 +112,7 @@ for (let i = 0; i < botoes.length; i++) {
   botoes[i].addEventListener('click', handleArrowClick);
 }
 
-let itensFotos = document.querySelectorAll('.foto-item');
-
-function manipulaSetas() {
+function markArrows() {
   if (posicao <= 0) {
     document.getElementById('btn-anterior').classList.add('disabled');
     document.getElementById('btn-proximo').classList.remove('disabled');
@@ -127,14 +123,19 @@ function manipulaSetas() {
     document.getElementById('btn-anterior').classList.remove('disabled');
     document.getElementById('btn-proximo').classList.remove('disabled');
   }
+}
 
-  for (let i = 0; i < itensFotos.length; i++) {
+function markThumbnail() {
+  const items = document.querySelectorAll('.foto-item');
+
+  for (let i = 0; i < items.length; i++) {
     if (i !== posicao) {
-      itensFotos[i].classList.remove('border-primary');
+      items[i].classList.remove('border-primary');
     }
   }
 
-  itensFotos[posicao].classList.add('border-primary');
+  items[posicao].classList.add('border-primary');
 }
 
-manipulaSetas();
+markArrows();
+markThumbnail();
