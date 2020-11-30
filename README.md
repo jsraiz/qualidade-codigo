@@ -35,3 +35,8 @@ Para alguns mais específicos foram feito testes. Para isso, preciso que você v
 - [Aula 35 - [Calculadora] Explicando refatoração para find](https://github.com/jsraiz/qualidade-codigo/tree/1.1.6/01-conditionals/01-calculadora-salario-liquido)
 - [Aula 36 - [Calculadora] Refatorando para find](https://github.com/jsraiz/qualidade-codigo/tree/1.1.7/01-conditionals/01-calculadora-salario-liquido)
 - [Aula 37 - [Calculadora] Finalizando refatoração](https://github.com/jsraiz/qualidade-codigo/tree/1.1.8/01-conditionals/01-calculadora-salario-liquido)
+- [Aula 38 - [Functions] Boas práticas - visão geral](https://github.com/jsraiz/qualidade-codigo/blob/main/02-functions/README.md)
+- [Aula 39 - [Functions] Explicando projeto para refatorar](https://github.com/jsraiz/qualidade-codigo/tree/starter/02-functions/00-galeria-fotos)
+- Aula 40 - [Functions] Funções anônimas
+- [Aula #41: [Functions] Refatorando por duplicação](https://github.com/jsraiz/qualidade-codigo/tree/2.0.0/02-functions/00-galeria-fotos)
+- [Aula #42: [Functions] Refatorando por responsabilidades](https://github.com/jsraiz/qualidade-codigo/tree/2.0.1/02-functions/00-galeria-fotos)
