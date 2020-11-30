@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 2.0.2
+- Material escrito gerado na aula
+
 ## 2.0.1
 - Quebrando funções que tem mais de uma responsabilidade
 
