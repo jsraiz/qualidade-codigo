@@ -51,41 +51,72 @@ const data = {
 let posicao = 0;
 let total = data.pictures.length;
 
-let html = '';
+function GalleryState(configs = {}) {
+  const configsDefault = {
+    position: 0,
+    images: [],
+    ...configs
+  };
 
-for (let i = 0; i < total; i++) {
-  html = html + `
-    <a data-posicao="${i}" class="foto-item border mx-1 p-2" href="#" title="">
-      <img src="fotos/${data.pictures[i]}"
-        class="img-fluid" />
-    </a>`
+  const total = configsDefault.images.length;
+  let position = configsDefault.position;
+
+  function prev() {}
+
+  function next() {}
+
+  function getPosition() {}
+
+  function getCurrentImage() {}
+
+  return {
+    prev,
+    next,
+    getPosition,
+    getCurrentImage
+  }
 }
 
-document.getElementById('container-fotos-lista').innerHTML = html;
+const galleryState = GalleryState({
+  position: 1
+})
 
-renderImage(data.pictures[posicao]);
+console.log(galleryState);
+
+function renderThumbnails(htmlThumbnails) {
+  document.getElementById('container-fotos-lista').innerHTML = htmlThumbnails;
+}
+
+function templateThumbnailsList(images) {
+  const total = images.length;
+  let html = '';
+
+  for (let i = 0; i < total; i++) {
+    html = html + templateThumbnail({ name: images[i], position: i })
+  }
+
+  return html;
+}
+
+function templateThumbnail({ name, position }) {
+  return `
+    <a data-posicao="${position}" class="foto-item border mx-1 p-2" href="#" title="">
+      <img src="fotos/${name}"
+        class="img-fluid" />
+    </a>`;
+}
 
 function renderImage(photoName) {
   document.getElementById('img-principal').src = `fotos/${photoName}`;
 }
 
-const todasFotos = document.querySelectorAll('.foto-item');
-
 function handleThumbnailClick(event) {
   event.preventDefault();
   posicao = parseInt(event.currentTarget.getAttribute('data-posicao'), 10);
 
-  renderImage(data.pictures[posicao]);
-
-  markArrows(); 
-  markThumbnail();
+  renderGallery();
 }
 
-for (let i = 0; i < todasFotos.length; i++) {
-  todasFotos[i].addEventListener('click', handleThumbnailClick);
-}
-
-const botoes = document.querySelectorAll('.btn');
 
 function prevPosition(position) {
   return (position <= 0) ? 0 : (position - 1)
@@ -102,14 +133,21 @@ function handleArrowClick(event) {
     ? prevPosition(posicao)
     : nextPosition(posicao, total);
 
-  renderImage(data.pictures[posicao]);
-  markArrows();
-  markThumbnail();
-
+  renderGallery();
 }
 
-for (let i = 0; i < botoes.length; i++) {
-  botoes[i].addEventListener('click', handleArrowClick);
+function bindEvents() {
+  const todasFotos = document.querySelectorAll('.foto-item');
+
+  for (let i = 0; i < todasFotos.length; i++) {
+    todasFotos[i].addEventListener('click', handleThumbnailClick);
+  }
+
+  const botoes = document.querySelectorAll('.btn');
+
+  for (let i = 0; i < botoes.length; i++) {
+    botoes[i].addEventListener('click', handleArrowClick);
+  }
 }
 
 function markArrows() {
@@ -137,5 +175,16 @@ function markThumbnail() {
   items[posicao].classList.add('border-primary');
 }
 
-markArrows();
-markThumbnail();
+function renderGallery() {
+  renderImage(data.pictures[posicao]);
+  markArrows();
+  markThumbnail();
+}
+
+function init() {
+  renderThumbnails(templateThumbnailsList(data.pictures));
+  renderGallery();
+  bindEvents();
+}
+
+init();
