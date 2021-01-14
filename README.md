@@ -40,3 +40,9 @@ Para alguns mais específicos foram feito testes. Para isso, preciso que você v
 - Aula 40 - [Functions] Funções anônimas
 - [Aula #41: [Functions] Refatorando por duplicação](https://github.com/jsraiz/qualidade-codigo/tree/2.0.0/02-functions/00-galeria-fotos)
 - [Aula #42: [Functions] Refatorando por responsabilidades](https://github.com/jsraiz/qualidade-codigo/tree/2.0.1/02-functions/00-galeria-fotos)
+- Aula #43
+- Aula #44
+- Aula #45
+- Aula #46
+- Aula #47
+- [Aula #48: [Functions] Criando objeto do estado](https://github.com/jsraiz/qualidade-codigo/tree/2.0.2-rc1/02-functions/00-galeria-fotos)
