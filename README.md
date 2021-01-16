@@ -45,4 +45,6 @@ Para alguns mais específicos foram feito testes. Para isso, preciso que você v
 - Aula #45
 - Aula #46
 - Aula #47
-- [Aula #48: [Functions] Criando objeto do estado](https://github.com/jsraiz/qualidade-codigo/tree/2.0.2-rc1/02-functions/00-galeria-fotos)
+- [Aula #48: [Functions] Estrutura estado da galeria](https://github.com/jsraiz/qualidade-codigo/tree/2.0.2-rc1/02-functions/00-galeria-fotos)
+- Aula 49
+- [Aula #50: [Functions] hasPrev e hasNext](https://github.com/jsraiz/qualidade-codigo/tree/2.0.3/02-functions/00-galeria-fotos)

@@ -1,6 +1,9 @@
 # Changelog
 Descrição das mudanças material do módulo de qualidade de código
 
+## 2.0.3
+- Aula 49 + 50: Implementado novos métodos na parte de functions galeria getPosition, setPosition, next, prev, hasNext e hasPrev
+
 ## 2.0.2-rc1
 - Iniciando lógica para separar o estado da view
 ## 2.0.2

@@ -59,29 +59,83 @@ function GalleryState(configs = {}) {
   };
 
   const total = configsDefault.images.length;
+  const lastPosition = total - 1;
   let position = configsDefault.position;
 
-  function prev() {}
+  function prev() {
+    position = hasPrev() ? (position - 1) : 0;
+  }
 
-  function next() {}
+  function next() {
+    position = hasNext() ? (position + 1) : lastPosition;
+  }
 
-  function getPosition() {}
+  function getPosition() {
+    return position;
+  }
 
-  function getCurrentImage() {}
+  function setPosition(pos) {
+    position = pos;
+  }
+
+  function getCurrentImage() {
+    return configsDefault.images[position];
+  }
+
+  function hasPrev() {
+    return (position - 1) >= 0;
+  }
+
+  function hasNext() {
+    return (position + 1) <= lastPosition;
+  }
 
   return {
     prev,
     next,
     getPosition,
-    getCurrentImage
+    getCurrentImage,
+    setPosition,
+    hasPrev,
+    hasNext
   }
 }
 
 const galleryState = GalleryState({
-  position: 1
-})
+  position: 0,
+  images: ['1.jpg', '2.jpg', '3.jpg', '4.jpg']
+});
 
-console.log(galleryState);
+console.log(galleryState.getCurrentImage());
+galleryState.next();
+console.log(galleryState.getCurrentImage());
+console.log(galleryState.getCurrentImage());
+galleryState.next();
+console.log(galleryState.getCurrentImage());
+galleryState.next();
+console.log(galleryState.getCurrentImage());
+
+galleryState.next();
+galleryState.next();
+galleryState.next();
+galleryState.next();
+console.log(galleryState.hasNext());
+console.log(galleryState.hasPrev());
+console.log('onde estou');
+galleryState.setPosition(0);
+console.log(galleryState.hasNext());
+console.log(galleryState.hasPrev());
+console.log(galleryState.getCurrentImage());
+galleryState.prev();
+console.log(galleryState.getCurrentImage());
+galleryState.prev();
+galleryState.next();
+console.log(galleryState.getCurrentImage());
+galleryState.prev();
+galleryState.prev();
+galleryState.prev();
+console.log(galleryState.getCurrentImage());
+
 
 function renderThumbnails(htmlThumbnails) {
   document.getElementById('container-fotos-lista').innerHTML = htmlThumbnails;
